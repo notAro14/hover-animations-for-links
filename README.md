@@ -1,7 +1,3 @@
-# Vanilla starter
+# Hover animations for links
 
-HTML, CSS and vanilla Javascript starter
-
-## About
-
-My go to starter to spin up pure frontend little project rapidly without all the hassle of bundlers
+[Source](https://tympanus.net/codrops/2021/02/10/simple-css-line-hover-animations-for-links/)

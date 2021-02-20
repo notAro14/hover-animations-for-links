@@ -1,7 +1,7 @@
 {
-  "name": "vanilla-starter",
+  "name": "hover-animations-for-links",
   "version": "1.0.0",
-  "description": "HTML, CSS and JS vanilla starter",
+  "description": "Some cool hover animations for text links",
   "private": "true",
   "scripts": {
     "build": "parcel build ./src/index.html --dist-dir ./dist/",
