@@ -1,0 +1,29 @@
+{
+  "name": "vanilla-starter",
+  "version": "1.0.0",
+  "description": "HTML, CSS and JS vanilla starter",
+  "private": "true",
+  "scripts": {
+    "build": "parcel build ./src/index.html --dist-dir ./dist/",
+    "clean": "rm -rf .parcel-cache/ && rm -rf dist/",
+    "prebuild": "yarn clean",
+    "prestart": "yarn clean",
+    "start": "parcel serve --port 4000 ./src/index.html"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "starter"
+  ],
+  "author": "Aro Andriamaro",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-css": "^2.0.0-alpha.3",
+    "@parcel/transformer-html": "^2.0.0-alpha.3",
+    "@parcel/transformer-postcss": "^2.0.0-alpha.3",
+    "@parcel/transformer-posthtml": "^2.0.0-alpha.3",
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.32.8"
+  }
+}
