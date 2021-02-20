@@ -1,5 +1,45 @@
 @use './styles/reset.scss';
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.links {
+  display: flex;
+  list-style: none;
+  padding: 1rem 0;
+  &__link {
+    padding: 1.5rem;
+  }
+}
+
+.link {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  svg {
+    position: absolute;
+    fill: none;
+    stroke: dodgerblue;
+    stroke-width: 2px;
+    &.arc {
+      top: 100%;
+      left: -20%;
+    }
+    &.scribble {
+      top: 100%;
+      left: 0%;
+    }
+    path {
+      // https://css-tricks.com/a-trick-that-makes-drawing-svg-lines-way-easier/
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset 0.3s ease-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
 }
