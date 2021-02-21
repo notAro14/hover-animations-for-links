@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  padding: 0 250px;
+  width: 100vw;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  padding: 1rem 0;
+}
+.links__link {
+  padding: 1.5rem;
+}
+
+.link {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+.link svg {
+  position: absolute;
+  fill: none;
+  stroke: dodgerblue;
+  stroke-width: 2px;
+}
+.link svg.arc {
+  top: 100%;
+  left: -20%;
+}
+.link svg.scribble {
+  top: 100%;
+  left: 0%;
+}
+.link svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.3s ease-out;
+}
+.link:hover svg path {
+  stroke-dashoffset: 0;
+}
