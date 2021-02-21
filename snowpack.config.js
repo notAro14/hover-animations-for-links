@@ -5,4 +5,13 @@ module.exports = {
   buildOptions: {
     out: 'dist',
   },
+  exclude: [
+    '**/node_modules/**/*',
+    'LICENSE',
+    'yarn.lock',
+    'snowpack.config.js',
+    'README.md',
+    'package.json',
+    '.gitignore',
+  ],
 }

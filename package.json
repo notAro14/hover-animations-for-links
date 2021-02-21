@@ -6,7 +6,7 @@
   "homepage": "https://notAro14.github.io/hover-animations-for-links",
   "scripts": {
     "build": "snowpack build",
-    "deploy": "gh-pages -d dist/src",
+    "deploy": "gh-pages -d dist",
     "predeploy": "yarn build",
     "start": "snowpack dev"
   },
