@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Some cool hover animations for text links",
   "private": "true",
+  "homepage": "https://notAro14.github.io/hover-animations-for-links",
   "scripts": {
     "build": "snowpack build",
+    "deploy": "gh-pages -d dist/src",
+    "predeploy": "yarn build",
     "start": "snowpack dev"
   },
   "keywords": [
@@ -16,6 +19,7 @@
   "author": "Aro Andriamaro",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "snowpack": "^3.0.11"
   },
   "dependencies": {
