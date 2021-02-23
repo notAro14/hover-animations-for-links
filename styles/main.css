@@ -19,6 +19,10 @@ body {
   text-align: center;
 }
 
+article {
+  margin-top: 1rem;
+}
+
 .links {
   display: flex;
   list-style: none;
@@ -34,25 +38,47 @@ body {
   text-decoration: none;
   position: relative;
 }
-.link svg {
+.link--svg svg {
   position: absolute;
   fill: none;
   stroke: dodgerblue;
   stroke-width: 2px;
 }
-.link svg.arc {
+.link--svg svg.arc {
   top: 100%;
   left: -20%;
 }
-.link svg.scribble {
+.link--svg svg.scribble {
   top: 100%;
-  left: 0%;
+  left: -10%;
 }
-.link svg path {
+.link--svg svg path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  transition: stroke-dashoffset 0.3s ease-out;
+  transition: stroke-dashoffset 350ms;
+  transition-timing-function: ease-in;
+  will-change: stroke-dashoffset;
 }
-.link:hover svg path {
+.link--svg:hover svg path {
   stroke-dashoffset: 0;
+  transition-timing-function: ease-out;
+}
+.link--css::after {
+  background-color: dodgerblue;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  transform: scale3d(0, 1, 1);
+  transform-origin: right;
+  transition: transform 350ms;
+  transition-timing-function: ease-in;
+  will-change: transform;
+}
+.link--css:hover::after {
+  transform: scale3d(1, 1, 1);
+  transform-origin: left;
+  transition-timing-function: ease-out;
 }
