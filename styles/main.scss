@@ -1,6 +1,10 @@
 @use './reset.scss';
 @use './secondary.scss';
 
+article {
+  margin-top: 1rem;
+}
+
 .links {
   display: flex;
   list-style: none;
@@ -15,31 +19,59 @@
   cursor: pointer;
   text-decoration: none;
   position: relative;
-  svg {
-    position: absolute;
-    fill: none;
-    stroke: dodgerblue;
-    stroke-width: 2px;
-    &.arc {
-      top: 100%;
-      left: -20%;
+  &--svg {
+    svg {
+      position: absolute;
+      fill: none;
+      stroke: dodgerblue;
+      stroke-width: 2px;
+      &.arc {
+        top: 100%;
+        left: -20%;
+      }
+      &.scribble {
+        top: 100%;
+        left: -10%;
+      }
+      path {
+        // https://css-tricks.com/a-trick-that-makes-drawing-svg-lines-way-easier/
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        transition: stroke-dashoffset 350ms;
+        transition-timing-function: ease-in;
+        will-change: stroke-dashoffset;
+      }
     }
-    &.scribble {
-      top: 100%;
-      left: 0%;
-    }
-    path {
-      // https://css-tricks.com/a-trick-that-makes-drawing-svg-lines-way-easier/
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      transition: stroke-dashoffset 0.3s ease-out;
+
+    &:hover {
+      svg {
+        path {
+          stroke-dashoffset: 0;
+          transition-timing-function: ease-out;
+        }
+      }
     }
   }
-
-  &:hover {
-    svg {
-      path {
-        stroke-dashoffset: 0;
+  &--css {
+    &::after {
+      background-color: dodgerblue;
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      transform: scale3d(0, 1, 1);
+      transform-origin: right;
+      transition: transform 350ms;
+      transition-timing-function: ease-in;
+      will-change: transform;
+    }
+    &:hover {
+      &::after {
+        transform: scale3d(1, 1, 1);
+        transform-origin: left;
+        transition-timing-function: ease-out;
       }
     }
   }
